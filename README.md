@@ -47,31 +47,29 @@ Time to update the config file (apologies to those who tried to use this reposit
 1. A [Forecast API key](https://developer.forecast.io/) (don't worry, it's free)
 2. Philips Hue Bridge IP address with a configured user. Details about how to set this up in the [Philips Hue Developer Documentation](http://www.developers.meethue.com/documentation/getting-started)
 
-##### Test it out
-Now, before we start going crazy and installing certificates let's check that everything loads in correctly. You can run a lightweight Python server in the smart-mirror directory to test things out:
+#### Running your mirror
+
+First, install dependencies and run the setup tool to generate your certificates:
+
 ```
-node .
+npm install
+npm run setup
 ```
 
-Go to `http://localhost:8000` and Chromium should prompt you to allow access to both your microphone and location. Try saying "What can I say".
+Once this is done, you can run your mirror in secure (https) mode to check it works!
+
+```
+npm start
+```
+
+You can now view the smart mirror at `https://localhost:4443`. Chrome will warn you that the connection is not secure, which is to be expected because you just signed your own certificate. Just go to 'Advanced' and click 'Proceed to localhost (unsafe)'.
+
+Chromium should prompt you to allow access to both your microphone and location. Try saying "What can I say".
 
 ##### Troubleshooting your microphone in Chromium
 If the page is not responding to you, double check that Chrome is using the correct input device by clicking the video camera icon (next to the favorite icon on the URL bar)
 
 If you are still having trouble with your microphone I suggest you test it out by following the instructions at [DIY Hacking](http://diyhacking.com/best-voice-recognition-software-for-raspberry-pi/)
-
-##### Installing a certificate
-You may have noticed that Chromium continuously prompts for microphone access. This is the only drawback of annyang, but there is a simple work around. If you serve your site using HTTPS it will only ever ask you once. In order to serve your site locally over HTTPS you'll first need to generate your own certfile with
-```
-openssl req -new -x509 -keyout python.pem -out python.pem -days 365 -nodes
-```
-Then crack open SimpleSecureHTTPServer.py and replace *PATH_TO_CERT* with the path to your cert file.
-
-Now the local HTTPS server can be run with
-```
-python SimpleSecureHTTPServer.py
-```
-You can now view the smart mirror at `https://localhost:4443`. Chrome will warn you that the connection is not secure, which is to be expected because you just signed your own certificate. Just go to 'Advanced' and click 'Proceed to localhost (unsafe)'.
 
 ##### Caveats
 The HUE won't work over HTTPS. It's lame, I know, I'm looking for a work-around.
