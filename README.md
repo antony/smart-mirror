@@ -1,5 +1,10 @@
 # Smart Mirror
-This project is inspired by [HomeMirror](https://github.com/HannahMitt/HomeMirror) and Michael Teeuw's [Magic Mirror](http://michaelteeuw.nl/tagged/magicmirror). It uses [annyang](https://github.com/TalAter/annyang) for voice interactivity, integrates with Philips Hue, and is my own take on what a "smart mirror" can be.
+
+A smart mirror for your home. This mirror is a port of Evan Cohen's excellent [SmartMirror](https://github.com/evancohen/smart-mirror) to node, to make it slightly better encapsulated, and to provide a decent setup mechanism to reduce dependencies.
+
+Roadmap is to change the app to a full node app using [HapiJS](http://hapijs.com) with a real plugin system. It will continue to run on RPi2 but may soon switch to Ubuntu MATE to ease Chromium installation.
+
+It will likely employ the HapiJS backend to allow control of the Hue even though we run on HTTPS. Magic!
 
 ### [See it in action (Video)](https://www.youtube.com/watch?v=PDIbhV8Nvq8)
 
@@ -11,9 +16,7 @@ Check it out: [https://evancohen.github.io/smart-mirror/](https://evancohen.gith
 The version running on this link has limited functionality: No Hue or Weather since config.js is not included in the source of this project and contains service keys, which I will not be posting.
 
 ### Getting Started
-#### Hardware Components
-- Raspberry Pi 2
-- USB Microphone (Or Webcam w/ microphone)
+#### Hardware Compocertr Webcam w/ microphone)
 - Monitor (with the bezel removed)
 - Mirror Pane (aka Observation Glass)
 - Philips Hue
