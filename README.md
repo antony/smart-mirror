@@ -50,10 +50,10 @@ Time to update the config file (apologies to those who tried to use this reposit
 ##### Test it out
 Now, before we start going crazy and installing certificates let's check that everything loads in correctly. You can run a lightweight Python server in the smart-mirror directory to test things out:
 ```
-python -m SimpleHTTPServer 8000
+node .
 ```
 
-Go to `http://localhost:8000` and Chromium should prompt you to allow access to both your microphone and location. Try saying "What can I say". 
+Go to `http://localhost:8000` and Chromium should prompt you to allow access to both your microphone and location. Try saying "What can I say".
 
 ##### Troubleshooting your microphone in Chromium
 If the page is not responding to you, double check that Chrome is using the correct input device by clicking the video camera icon (next to the favorite icon on the URL bar)
@@ -74,7 +74,7 @@ python SimpleSecureHTTPServer.py
 You can now view the smart mirror at `https://localhost:4443`. Chrome will warn you that the connection is not secure, which is to be expected because you just signed your own certificate. Just go to 'Advanced' and click 'Proceed to localhost (unsafe)'.
 
 ##### Caveats
-The HUE won't work over HTTPS. It's lame, I know, I'm looking for a work-around. 
+The HUE won't work over HTTPS. It's lame, I know, I'm looking for a work-around.
 
 ~~The weather service breaks CORS, so you'll need to either install the [Allow-Control-Allow-Origin: *](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?utm_source=chrome-app-launcher-info-dialog) Chrome extension (recommended) or set up a [Proxy](https://github.com/iantearle/forecast.io-javascript-api).~~ Fixed with JSONP
 

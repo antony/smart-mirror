@@ -1,0 +1,22 @@
+{
+  "name": "smart-mirror",
+  "version": "1.0.0",
+  "description": "The fairest of them all https://antony.github.io/smart-mirror — Edit",
+  "main": "./node_modules/http-server/bin/http-server",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antony/smart-mirror.git"
+  },
+  "author": "Evan Cohen, Antony Jones",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/antony/smart-mirror/issues"
+  },
+  "homepage": "https://github.com/antony/smart-mirror#readme",
+  "dependencies": {
+    "http-server": "^0.8.5"
+  }
+}
