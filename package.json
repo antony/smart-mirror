@@ -4,9 +4,8 @@
   "description": "The fairest of them all https://antony.github.io/smart-mirror — Edit",
   "main": "./node_modules/http-server/bin/http-server",
   "scripts": {
-    "start": "./node_modules/http-server/bin/http-server --ssl -p 4443",
-    "setup": "openssl req -new -x509 -keyout key.pem -out cert.pem -days 365 -nodes",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "setup": "openssl req -new -x509 -keyout key.pem -out cert.pem -days 365 -nodes"
   },
   "repository": {
     "type": "git",
@@ -19,6 +18,9 @@
   },
   "homepage": "https://github.com/antony/smart-mirror#readme",
   "dependencies": {
-    "http-server": "^0.8.5"
+    "hapi": "^11.1.2",
+    "http-server": "^0.8.5",
+    "inert": "^3.2.0",
+    "vision": "^4.0.1"
   }
 }
